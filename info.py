@@ -47,28 +47,11 @@ request_channel = environ.get('REQUEST_CHANNEL', '0')
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '0'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/')
 
-# --- Verification Logic ---
-# Yahan error tha: 'IS_VERIFY' string pass ho raha tha jabki env var fetch karna chahiye
-IS_VERIFY = is_enabled(environ.get('IS_VERIFY'), True)
-
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/")
-VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
-SHORTENER_API = environ.get("SHORTENER_API", "3097623f852197a9ce40d1212aaa8bbf2803e799")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", 'omegalinks.in')
-SHORTENER_API2 = environ.get("SHORTENER_API2", "3097623f852197a9ce40d1212aaa8bbf2803e799")
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", 'omegalinks.in')
-SHORTENER_API3 = environ.get("SHORTENER_API3", "3097623f852197a9ce40d1212aaa8bbf2803e799")
-SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", 'omegalinks.in')
-TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
-THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
-
 # --- Lists & Qualities ---
 LANGUAGES = ["hindi", "english", "telugu", "tamil", "kannada", "malayalam", "bengali", "marathi", "gujarati", "punjabi"]
 QUALITIES = ["HdRip","web-dl" ,"bluray", "hdr", "fhd" , "240p", "360p", "480p", "540p", "720p", "960p", "1080p", "1440p", "2K", "2160p", "4k", "5K", "8K"]
 YEARS = [f'{i}' for i in range(202, 2002, -1)]
 SEASONS = [f'season {i}' for i in range(1, 23)]
-REF_PREMIUM = 30
-PREMIUM_POINT = 1500
 
 # --- Process Auth/Request IDs ---
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
@@ -78,8 +61,6 @@ REQUEST_CHANNEL = int(request_channel) if request_channel and id_pattern.search(
 START_IMG = (environ.get('START_IMG', 'https://files.catbox.moe/zgy7zs.jpg')).split()
 FORCESUB_IMG = environ.get('FORCESUB_IMG', 'https://i.ibb.co/ZNC1Hnb/ad3f2c88a8f2.jpg')
 REFER_PICS = (environ.get("REFER_PICS", "https://envs.sh/PSI.jpg")).split() 
-PAYPICS = (environ.get('PAYPICS', 'https://files.catbox.moe/q3mbng.png')).split()
-SUBSCRIPTION = environ.get('SUBSCRIPTION', 'https://files.catbox.moe/g5hjr7.png')
 REACTIONS = ["👀", "😱", "🔥", "😍", "🎉", "🥰", "😇", "⚡"]
 
 # --- Auto Filter & Timers ---
@@ -114,17 +95,7 @@ SETTINGS = {
     'auto_delete': AUTO_DELETE,
     'template': IMDB_TEMPLATE,
     'caption': FILE_CAPTION,
-    'tutorial': TUTORIAL,
-    'shortner': SHORTENER_WEBSITE,
-    'api': SHORTENER_API,
-    'shortner_two': SHORTENER_WEBSITE2,
-    'api_two': SHORTENER_API2,
     'log': LOG_VR_CHANNEL,
     'imdb': IMDB,
-    'link': LINK_MODE, 
-    'is_verify': IS_VERIFY, 
-    'verify_time': TWO_VERIFY_GAP,
-    'shortner_three': SHORTENER_WEBSITE3,
-    'api_three': SHORTENER_API3,
-    'third_verify_time': THREE_VERIFY_GAP
+    'link': LINK_MODE
 }
